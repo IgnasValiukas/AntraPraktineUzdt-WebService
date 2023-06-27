@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.com/legostore"
+           targetNamespace="http://example.com/legostore" elementFormDefault="qualified">
+
+    <xs:element name="getLegoStoreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLegoStoreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="legoStore" type="tns:legoStore"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="legoStore">
+        <xs:sequence>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="address" type="xs:string"/>
+            <xs:element name="currency" type="tns:currency"/>
+            <xs:element name="phoneNumber" type="xs:string"/>
+            <xs:element name="addressURL" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="$ (dollar)"/>
+            <xs:enumeration value="€ (euro)"/>
+            <xs:enumeration value="£ (pound sterling"/>
+            <xs:enumeration value="₹ (indian rupee"/>
+            <xs:enumeration value="Fr. (swiss franc)"/>
+            <xs:enumeration value="Kr. (danish krone)"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
