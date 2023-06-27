@@ -1,9 +1,0 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://example.com/legos.xsd">
-    <soapenv:Header/>
-    <soapenv:Body>
-        <gs:getLegoRequest>
-            <gs:name>Hydro Bounty</gs:name>
-        </gs:getLegoRequest>
-    </soapenv:Body>
-</soapenv:Envelope>
